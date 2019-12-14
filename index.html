@@ -3,11 +3,38 @@
     <HTML>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("芙兰.png");
+            background-position: right bottom;
+            background-repeat: no-repeat;
+        }
+    </style>
 
     <HEAD>
         <meta name="viewport" content="width=device-width, initial-scale=0.46">
         <TITLE>抽签 </TITLE>
         <SCRIPT LANGUAGE="JavaScript">
+            var chara=[
+                "纯狐",
+                "芙兰",
+                "古明地觉",
+                "古明地恋",
+                "辉夜",
+                "九十九",
+                "蕾米",
+                "皮丝",
+                "神奈子",
+                "神子",
+                "圣白莲",
+                "勇仪",
+                "幽幽子",
+                "早苗",
+                "诹访子",
+                "八云紫",
+                "哆来咪",
+                "摩多罗",
+            ]
             var names = [
                 "「红色的幻想乡」 <br> 「紅色の幻想郷」 <br> 东方红魔乡 蕾米莉亚·斯卡雷特 6面5符 Hard / Lunatic",
                 "禁忌「恋之迷宫」 <br> 禁忌「恋の迷路」 <br> 东方红魔乡 芙兰朵露·斯卡雷特 EX面5符",
@@ -57,12 +84,19 @@
                 window.clearTimeout(time);
                 document.getElementById("result").className = "alert alert-success";
                 document.getElementById("btnBegin").disabled = false;
+                var str= document.getElementById("result").innerHTML;
+                for (var i=0;i<chara.length;i++)
+                    if (document.getElementById("result").innerHTML.match(chara[i]) != null)
+                        document.body.style.backgroundImage="url("+ chara[i]+".png)";
+                
             }
         </SCRIPT>
     </HEAD>
 
     <BODY>
-        <!-- <img src="芙兰朵露·斯卡雷特.png" class="mb-mr-0"> -->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">据说有个导航栏舒服一点</a>
+        </nav>
         <div class="container" style="text-align:center;margin-top:50px">
             <h1>符卡抽签程序</h1>
             <div class="alert alert-info" role="alert" id="result">
@@ -75,6 +109,9 @@
             </div>
 
         </div>
+        <!-- <nav class="navbar fixed-bottom navbar-light bg-light">
+            <a class="navbar-brand" href="#">摸鱼</a>
+        </nav> -->
     </BODY>
 
     </HTML>
